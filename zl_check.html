@@ -20,21 +20,10 @@
 var data = null;
 function change() {
 	var val = document.getElementById("input").value;
-	console.log(val);
-	if(val.length === 7 && val[0] === '3') {
-		var index = data.indexOf(val);
-		if(index > -1) {
-			var re = data.substring(index, index + 19);
-			document.getElementById("re").innerText = re;
-		} else {
-			document.getElementById("re").innerText = '未找到相关数据';
-		}
-	} else if(val.length === 11) {
-		var index = data.indexOf(val);
-		console.log(index);
-		if(index > -1) {
-			var re = data.substring(index - 8, index - 8 + 19);
-			document.getElementById("re").innerText = re;
+	if(val.length >= 7) {
+		var row = data.find(m => m.indexOf(val) > -1);
+		if(row) {
+			document.getElementById("re").innerText = row;
 		} else {
 			document.getElementById("re").innerText = '未找到相关数据';
 		}	
@@ -3058,7 +3047,7 @@ function none() {
 38b0kxp	18606090027
 </div>
 <script type="text/javascript">
-data = document.getElementById("data").innerText;
+data = document.getElementById("data").innerText.split('\n');
 </script>
 </body>
 </html>
