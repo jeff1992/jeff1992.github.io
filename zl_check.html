@@ -24,7 +24,7 @@ function change() {
 	if(val.length === 7 && val[0] === '3') {
 		var index = data.indexOf(val);
 		if(index > -1) {
-			var re = data.substring(index, index + 18);
+			var re = data.substring(index, index + 19);
 			document.getElementById("re").innerText = re;
 		} else {
 			document.getElementById("re").innerText = '未找到相关数据';
@@ -33,7 +33,7 @@ function change() {
 		var index = data.indexOf(val);
 		console.log(index);
 		if(index > -1) {
-			var re = data.substring(index - 8, index - 8 + 18);
+			var re = data.substring(index - 8, index - 8 + 19);
 			document.getElementById("re").innerText = re;
 		} else {
 			document.getElementById("re").innerText = '未找到相关数据';
