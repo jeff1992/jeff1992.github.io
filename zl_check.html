@@ -22,6 +22,8 @@ function change() {
 		if(index > -1) {
 			var re = data.substring(index, index + 18);
 			document.getElementById("re").innerText = re;
+		} else {
+			document.getElementById("re").innerText = '未找到相关数据';
 		}
 	} else if(val.length === 11) {
 		var index = data.indexOf(val);
@@ -29,9 +31,15 @@ function change() {
 		if(index > -1) {
 			var re = data.substring(index - 8, index - 8 + 18);
 			document.getElementById("re").innerText = re;
-		}		
+		} else {
+			document.getElementById("re").innerText = '未找到相关数据';
+		}	
 	} else {
+		document.getElementById("re").innerText = '';
 	}
+}
+function none() {
+	document.getElementById("re").innerText = '';
 }
 </script>
 
@@ -40,6 +48,7 @@ function change() {
 </head>
 <body>
 
+<h4 style="margin-top:20px">输入编号或手机号</h4>
 <input id="input" oninput="change()" style="height: 36px; width: 100%" />
 <div id="re" style="font-size: 14px; margin-top:20px"></div>
 <div style="display:none" id="data">
